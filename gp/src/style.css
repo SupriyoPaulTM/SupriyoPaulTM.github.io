@@ -1,0 +1,239 @@
+:root {
+  --clr-light1: #ffffffff;
+  --clr-light2: #efefefff;
+  --clr-dark1: #2b2d42ff;
+  --clr-dark2: #2F323Aff;
+  --clr-main1: #003844ff;
+  --clr-main2: #133C55ff;
+  --clr-accent1: #ffb100ff;
+  --clr-accent2: #B0413Eff;
+  --clr-alpha1: #003844aa;
+  --clr-alpha2: #00384455;
+  --clr-gray: #67697Cff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.material-icons.md-18{font-size: 18px;}
+.material-icons.md-24{font-size: 24px;}
+.material-icons.md-36{font-size: 36px;}
+.material-icons.md-48{font-size: 48px;}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Poppins";
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.nav-menu {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  left: 0;
+  z-index: -1;
+  background-color: var(--clr-dark1);
+  padding: 20px;
+  color: var(--clr-gray);
+}
+
+.nav-menu ul {
+  margin-top: 5vh;
+  list-style-type: none;
+}
+
+.nav-menu a {
+  display: block;
+  text-decoration: none;
+  padding: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  border-bottom: 1px solid var(--clr-gray);
+  color: var(--clr-gray);
+}
+
+.full-content {
+  background-color: var(--clr-light2);
+  transition: transform ease-in-out 0.3s;
+  box-shadow: 0 0 10px black;
+}
+
+.active.full-content {
+  transform: translateX(250px);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  color: var(--clr-dark1);
+  height: 8vh;
+}
+
+.menu-btn {
+  background-color: #efefefaa;
+  border-radius: 5px;
+  position: fixed;
+  z-index: 100;
+  top: 10px;
+  left: 10px;
+  transition: all ease-out 0.3s;
+}
+
+.active.menu-btn {
+  transform: translateX(190px);
+  background-color: var(--clr-dark1);
+  color: var(--clr-gray);
+}
+
+header h1 {
+  flex: 1;
+  text-align: center;
+}
+
+.name {
+  font-family: "Amaranth";
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+}
+
+.hero {
+  background-color: var(--clr-main1);
+  position: relative;
+  height: 92vh;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: min(600px, 100vw);
+  right: 0;
+  background-image: linear-gradient(to right, var(--clr-main1), var(--clr-alpha1), var(--clr-alpha2), #00000000, var(--clr-alpha2), var(--clr-alpha1), var(--clr-main1));
+  z-index: 2;
+}
+
+.hero-elements {
+  color: var(--clr-light1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  font-size: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding-left: 50px;
+  letter-spacing: 0.2rem;
+}
+
+.hero img {
+  width: min(600px, 100vw);
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.hero a {
+  border: 3px solid var(--clr-accent1);
+  border-radius: 10px;
+  text-decoration: none;
+  width: max-content;
+  padding: 20px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--clr-accent1);
+  transition: all ease-in-out 0.3s;
+}
+
+.hero a:hover {
+  background-color: var(--clr-accent1);
+  color: var(--clr-light1);
+}
+
+.gallary {
+  padding: 70px 20px 20px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.gallary-title {
+  color: var(--clr-gray);
+  position: absolute;
+  left: 40px;
+  top: 20px;
+  padding: 0 20px;
+  background-color: var(--clr-light2);
+  z-index: 3;
+}
+
+.gallary::after {
+  content: '';
+  position: absolute;
+  top: 37px;
+  left: 20px;
+  width: 90%;
+  height: 5px;
+  background-color: var(--clr-gray);
+  z-index: 2;
+}
+
+.img-card {
+  background-color: var(--clr-light1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.card-title {
+  color: var(--clr-gray);
+}
+
+.card-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  box-shadow: 0 0 15px #00000033;
+  border-radius: 5px;
+}
+
+.card-desp {
+  color: var(--clr-gray);
+  letter-spacing: 0.1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .img-card {
+    width: 100%;
+  }
+}
+
+footer {
+  background-color: var(--clr-dark2);
+  color: var(--clr-gray);
+  padding: 30px;
+}
+
+.last-name {
+  text-decoration: none;
+  color: var(--clr-accent1);
+  font-weight: bold;
+}

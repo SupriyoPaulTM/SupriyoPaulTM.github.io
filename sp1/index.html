@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amaranth">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="src/main.js" defer></script>
+  <title>Home - Supriyo Paul</title>
+</head>
+<body id="body">
+	<header>
+	  <div class="header">
+	    <button id="menu" class="menu" onclick="navopen()">
+	    <i class="material-icons md-48">menu</i>
+	    </button>
+	    <button id="close" class="menu remove" onclick="navclose()">
+	      <i class="material-icons md-48">close</i>
+	    </button>
+	    <div class="top-name">Supriyo Paul</div>
+	    <button class="themeicon" onclick="themeswitch()">
+	      <i class="material-icons md-24">contrast</i>
+	    </button>
+	  </div>
+	  <nav id="nav" class="nav">
+	    <a href="#home">Home</a>
+	    <a href="#profile">Profile</a>
+	    <a href="#about">About</a>
+	    <a href="#contact">Contact</a>
+	  </nav>
+	</header>
+	<section id="home">
+	  <div class="container">
+	    <div class="top-name">Wellcome !</div>
+	    <div class="caption">
+	    I’m excited to share my work and journey with you. Here, you’ll find a collection of my projects, skills, and experiences.<br><br>
+	      <ul style="margin: 20px">
+	        <li>Menu: Top left (☰) for navigation</li><br>
+	        <li>Theme: Toggle light/dark mode in the top right corner.</li>
+	      </ul>
+	    </div>
+	  </div>
+	</section>
+	<section id="profile">
+	  <div class="container">
+	    <div class="top-name">Profile</div>
+	    <div class="scrollbar">
+	      <img class="item item1" src="img/profile01.jpeg" alt="Supriyo"/>
+	      <img class="item item2" src="img/profile02.jpeg" alt="Supriyo"/>
+	      <img class="item item3" src="img/profile03.jpeg" alt="Supriyo"/>
+	      <img class="item item4" src="img/profile04.jpeg" alt="Supriyo"/>
+	      <img class="item item5" src="img/profile05.jpeg" alt="Supriyo"/>
+	      <img class="item item6" src="img/profile06.jpeg" alt="Supriyo"/>
+	      <img class="item item7" src="img/profile07.jpeg" alt="Supriyo"/>
+	      <img class="item item8" src="img/profile08.jpeg" alt="Supriyo"/>
+	    </div>
+	    <div class="socialbar">
+	      <a href="https://www.facebook.com/SupriyoPaulTM/"><img class="socialicon" src="https://img.icons8.com/windows/facebook-new" alt="fb" /></a>
+	      <a href="https://www.instagram.com/SupriyoPaulTM/"><img class="socialicon" src="https://img.icons8.com/windows/instagram-new" alt="ig" /></a>
+	      <a href="https://x.com/SuprioPaulTM"><img class="socialicon" src="https://img.icons8.com/windows/twitterx" alt="x" /></a>
+	      <a href="https://youtube.com/@supriyopauldp"><img class="socialicon" src="https://img.icons8.com/windows/youtube-play" alt="yt" /></a>
+	      <a href="https://www.github.com/SupriyoPaulTM"><img class="socialicon" src="https://img.icons8.com/windows/github" alt="git" /></a>
+	      <a href="#"><img class="socialicon" src="https://img.icons8.com/windows/reddit" alt="rdt" /></a>
+	    </div>
+	  </div>
+	</section>
+	<section id="about">
+	  <div class="container">
+	    <div class="top-name">Web Designer</div>
+	    <div class="caption">
+	      Hi, I’m Supriyo Paul, a passionate **front-end web designer** dedicated to crafting clean, responsive, and user-friendly websites. With expertise in **HTML, CSS, and JavaScript**, I bring ideas to life by combining creativity with technical precision.
+	    </div>
+	    <div class="socialbar">
+	      <img class="socialicon" src="https://img.icons8.com/ios/html-filetype" alt="html" />
+	      <img class="socialicon" src="https://img.icons8.com/ios/css-filetype" alt="css" />
+	      <img class="socialicon" src="https://img.icons8.com/ios/js" alt="js" />
+	    </div>
+	  </div>
+	</section>
+	<section>
+	  <div class="container">
+	    <div class="top-name">Teacher</div>
+	    <div class="caption">
+	      With a deep love for numbers and problem-solving, I’ve spent years teaching mathematics to students of all levels. My approach focuses on making math accessible, engaging, and fun. I believe that math is not just about formulas but about developing critical thinking and problem-solving skills that apply to everyday life.  
+	    </div>
+	    <div class="socialbar">
+	      <img class="socialicon" src="https://img.icons8.com/ios/ball-point-pen" alt="js" />
+	      <img class="socialicon" src="https://img.icons8.com/metro/book" alt="js" />
+	      <img class="socialicon" src="https://img.icons8.com/ios/backpack" alt="js" />
+	    </div>
+	  </div>
+	</section>
+	<section id="contact">
+	  <div class="container">
+	    <div class="top-name">Contact Me</div>
+	      <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+	        <input type="hidden" name="access_key" value="b8cc7762-826a-4c40-9677-e9a780a79421">
+	        <label for="name">Your Name</label>
+	        <input type="text" name="name" required>
+	        <label for="email">Your Email</label>
+	        <input type="email" name="email" required>
+	        <label for="message">Message</label>
+	        <textarea name="message" required></textarea>
+	        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+	        <!-- Custom Confirmation / Success Page -->
+	        <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+	        <button type="submit">Send</button>
+	     </form>
+	  </div>
+	</section>
+	<footer>
+	  <p class="caption">This Website is made by<br><span style="color: red">Supriyo Paul.</span><br>If you also want to build your own website, just let me know by contacting from the above <a href="#contact">contact form</a>.</p>
+	</footer>
+</body>
+</html>
