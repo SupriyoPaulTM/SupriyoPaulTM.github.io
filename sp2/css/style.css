@@ -133,6 +133,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 15px;
   padding-top: 100px;
 }
 
@@ -144,5 +145,68 @@ body {
 }
 
 .hero-text {
-  
+  font-size: 2.1rem;
+  letter-spacing: 0.2rem;
+  color: #666;
+}
+
+.author {
+  font-family: "Serif";
+  font-weight: bold;
+  color: #999;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --color {
+  syntax: "<color>";
+  initial-value: red;
+  inherits: false;
+}
+
+.hero-btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: var(--clr-dark);
+  position: relative;
+  color: var(--color);
+  text-shadow: 0 0 5px var(--color);
+  animation: spin 3s linear infinite;
+}
+
+.hero-btn::before, .hero-btn::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 2px;
+  border-radius: 20px;
+  background: conic-gradient(from var(--angle), transparent 70%, var(--color));
+  animation: spin 3s linear infinite;
+}
+
+.hero-btn::after {
+  filter: blur(20px);
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  0% {
+    --angle: 0deg;
+    --color: var(--accent-color);
+  } 75% {
+    --angle: 270deg;
+    --color: var(--accent-color2);
+  } 100% {
+    --angle: 360deg;
+    --color: var(--accent-color);
+  }
 }
