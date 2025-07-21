@@ -8,13 +8,14 @@ let skillsAnimation = document.querySelectorAll('.skills-animation');
       element: item,
       offset: '80%',
       handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
+        let progress = item.querySelectorAll('.progress-bar');
         progress.forEach(el => {
           el.style.width = el.getAttribute('aria-valuenow') + '%';
         });
       }
     });
   });
+
 
 //Animation on scroll
 function aosInit() {
