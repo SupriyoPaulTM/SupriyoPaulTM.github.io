@@ -314,6 +314,7 @@ section {
 
 .progress-bar {
   height: 100%;
-  width: 1px;
+  width: 1%;
+  transition: 3s;
   background-color: var(--clr-ylo);
 }
