@@ -1,0 +1,132 @@
+:root {
+  --clr-white: #FFFFFFFF;
+  --clr-white2: #F3F3F3FF;
+  --clr-red: #D81159FF;
+  --clr-red2: #8F2D56FF;
+  --clr-green: #00CC99FF;
+  --clr-blue: #00A6A6FF;
+  --clr-blue2: #218380FF;
+  --clr-blue3: #274156FF;
+  --clr-blue4: #1C6E8CFF;
+  --clr-ylo: #F6AE2DFF;
+  --clr-purple: #320D6DFF;
+  --clr-purple2: #462255FF;
+  --clr-gray: #595F72FF;
+  --clr-dark: #1E212BFF;
+  --clr-shadow: #00000033;
+}
+
+.default {
+  --background-color: var(--clr-white2);
+  --box-color: var(--clr-white);
+  --text-color-dark: var(--clr-dark);
+  --text-color-light: var(--clr-white2);
+  --primary-color: var(--clr-blue4);
+  --accent-color: var(--clr-ylo);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Amaranth";
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+header {
+  text-align: center;
+  background-color: var(--primary-color);
+  padding: 10px;
+  letter-spacing: 2px;
+  border-bottom: 2px solid var(--accent-color);
+  color: var(--text-color-light);
+  font-size: 120%;
+  margin-bottom: 20px;
+}
+
+header ul {
+  list-style-type: none;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+header a {
+  color: var(--accent-color);
+}
+
+header a:hover {
+  font-size: 110%;
+  color: var(--text-color-light);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+header a:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  left: 0;
+  bottom: 0;
+  animation: slide 0.2s linear;
+}
+
+@keyframes slide {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+main, section {
+  padding: 20px;
+}
+
+main p, section p {
+  margin: 10px;
+  padding: 10px;
+  line-height: 200%;
+  letter-spacing: 1px;
+}
+
+main p:nth-child(even) {
+  background-color: var(--clr-white);
+  border-radius: 10px;
+}
+
+h2 {
+  border-left: 2px solid var(--primary-color);
+  padding-left: 10px;
+}
+
+section {
+  background-color: #cfcfcf;
+  border-top: 1px solid var(--clr-dark);
+}
+
+hr {
+  margin: 20px;
+}
+
+footer {
+  background-color: var(--clr-dark);
+  color: var(--text-color-light);
+  padding: 20px;
+  text-align: center;
+}
