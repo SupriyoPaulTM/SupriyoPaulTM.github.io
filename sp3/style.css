@@ -43,6 +43,7 @@ h1, h2, h3, h4 {
 
 body {
   background-color: var(--background-color);
+  position: relative;
 }
 
 header {
@@ -52,8 +53,11 @@ header {
   letter-spacing: 2px;
   border-bottom: 2px solid var(--accent-color);
   color: var(--text-color-light);
-  font-size: 120%;
   margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 250%;
 }
 
 header ul {
@@ -64,17 +68,13 @@ header ul {
 }
 
 header a {
+  font-size: 120%;
   color: var(--accent-color);
-}
-
-header a:hover {
-  font-size: 110%;
-  color: var(--text-color-light);
   position: relative;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-header a:hover::after {
+header a::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -82,16 +82,17 @@ header a:hover::after {
   background-color: var(--accent-color);
   left: 0;
   bottom: 0;
-  animation: slide 0.2s linear;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
-@keyframes slide {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
+header a:hover {
+  color: var(--text-color-light);
+}
+
+header a:hover::after {
+  transform: scaleX(1);
 }
 
 main, section {
@@ -129,4 +130,45 @@ footer {
   color: var(--text-color-light);
   padding: 20px;
   text-align: center;
+}
+
+.b2t {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--clr-shadow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #00000066;
+  z-index: 90;
+}
+
+.b2t:hover {
+  border: 2px solid black;
+}
+
+.fade-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  opacity: 0.0;
+  z-index: 99;
+  animation: fadein 3s ease;
+  pointer-events: none;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 1.0;
+  }
+  to {
+    opacity: 0.0;
+  }
 }
