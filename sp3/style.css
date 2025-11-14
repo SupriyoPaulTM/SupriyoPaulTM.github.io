@@ -13,6 +13,7 @@
   --clr-purple2: #462255FF;
   --clr-gray: #595F72FF;
   --clr-dark: #1E212BFF;
+  --clr-dark2: #0E111BFF;
   --clr-shadow: #00000033;
 }
 
@@ -21,6 +22,15 @@
   --box-color: var(--clr-white);
   --text-color-dark: var(--clr-dark);
   --text-color-light: var(--clr-white2);
+  --primary-color: var(--clr-blue4);
+  --accent-color: var(--clr-ylo);
+}
+
+.dark {
+  --background-color: var(--clr-dark);
+  --box-color: var(--clr-dark2);
+  --text-color-light: var(--clr-dark);
+  --text-color-dark: var(--clr-white2);
   --primary-color: var(--clr-blue4);
   --accent-color: var(--clr-ylo);
 }
@@ -44,6 +54,7 @@ h1, h2, h3, h4 {
 body {
   background-color: var(--background-color);
   position: relative;
+  color: var(--text-color-dark);
 }
 
 header {
@@ -54,6 +65,7 @@ header {
   border-bottom: 2px solid var(--accent-color);
   color: var(--text-color-light);
   margin-bottom: 20px;
+  position: relative;
 }
 
 header h1 {
@@ -95,6 +107,22 @@ header a:hover::after {
   transform: scaleX(1);
 }
 
+#theme {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  color: var(--text-color-dark);
+  background-color: var(--clr-shadow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--text-color-dark);
+  z-index: 90;
+}
+
 main, section {
   padding: 20px;
 }
@@ -104,10 +132,11 @@ main p, section p {
   padding: 10px;
   line-height: 200%;
   letter-spacing: 1px;
+  max-width: 600px;
 }
 
 main p:nth-child(even) {
-  background-color: var(--clr-white);
+  background-color: var(--box-color);
   border-radius: 10px;
 }
 
@@ -117,7 +146,7 @@ h2 {
 }
 
 section {
-  background-color: #cfcfcf;
+  background-color: var(--clr-gray);
   border-top: 1px solid var(--clr-dark);
 }
 
@@ -126,8 +155,8 @@ hr {
 }
 
 footer {
-  background-color: var(--clr-dark);
-  color: var(--text-color-light);
+  background-color: var(--clr-dark2);
+  color: var(--clr-white2);
   padding: 20px;
   text-align: center;
 }
@@ -143,8 +172,13 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #00000066;
+  border: 2px solid var(--text-color-dark);
+  color: var(--text-color-dark);
   z-index: 90;
+}
+
+#b2t-btn {
+  display: none;
 }
 
 .b2t:hover {
@@ -160,7 +194,7 @@ footer {
   background-color: #ffffff;
   opacity: 0.0;
   z-index: 99;
-  animation: fadein 3s ease;
+  animation: fadein 2s ease;
   pointer-events: none;
 }
 
