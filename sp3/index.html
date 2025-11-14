@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Amaranth">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-<body class="default" id="main">
+<body id="main" class="theme-dark">
     <header>
         <h1>Supriyo Paul</h1>
         <nav>
@@ -18,7 +18,11 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <button id="theme" class="material-icons" onclick="themeToggle()">contrast</button>
+        <button id="theme-toggle" class="theme-toggle" aria-pressed="true" aria-label="Toggle theme">
+            <span class="toggle-track">
+                <span class="toggle-knob" aria-hidden="true"></span>
+            </span>
+        </button>
     </header>
     <main>
         <div>
@@ -63,7 +67,7 @@
       Thank You
     </footer>
     <div class="fade-in"></div>
-    <button class="b2t" id="b2t-btn">↑</button>
+    <button id="b2t-btn" class="scroll-top" aria-label="Back to top">↑</button>
     <script src="main.js"></script>
 </body>
 </html>

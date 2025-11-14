@@ -1,21 +1,62 @@
-let backToTop = document.getElementById("b2t-btn");
-window.onscroll = function() {scrollFunction()};
+/* -------------------------------
+   ELEMENTS
+-------------------------------- */
+const bodyEl = document.getElementById('main') || document.body;
+const themeToggleBtn = document.getElementById('theme-toggle');
+const backToTopBtn = document.getElementById('b2t-btn');
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    backToTop.style.display = "block";
+/* -------------------------------
+   DEFAULT THEME (Dark First)
+-------------------------------- */
+if (!bodyEl.classList.contains('theme-dark') &&
+    !bodyEl.classList.contains('theme-light')) {
+  bodyEl.classList.add('theme-dark');
+}
+
+/* -------------------------------
+   THEME TOGGLE (Sliding Switch)
+-------------------------------- */
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', () => {
+    const isDark = bodyEl.classList.contains('theme-dark');
+
+    if (isDark) {
+      bodyEl.classList.remove('theme-dark');
+      bodyEl.classList.add('theme-light');
+      themeToggleBtn.setAttribute('aria-pressed', 'false');
+    } else {
+      bodyEl.classList.remove('theme-light');
+      bodyEl.classList.add('theme-dark');
+      themeToggleBtn.setAttribute('aria-pressed', 'true');
+    }
+  });
+}
+
+/* -------------------------------
+   BACK TO TOP BUTTON
+-------------------------------- */
+function toggleBackToTop() {
+  const scrolled =
+    document.documentElement.scrollTop ||
+    document.body.scrollTop;
+
+  if (scrolled > 180) {
+    backToTopBtn.classList.add('show');
   } else {
-    backToTop.style.display = "none";
+    backToTopBtn.classList.remove('show');
   }
 }
 
+/* Show button on scroll */
+window.addEventListener('scroll', toggleBackToTop);
 
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-};
-backToTop.addEventListener("click", topFunction);
+/* Run once on load */
+toggleBackToTop();
 
-function themeToggle() {
-  document.getElementById("main").classList.toggle("dark");
-};
+/* Smooth scroll */
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
