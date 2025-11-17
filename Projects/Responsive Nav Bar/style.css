@@ -1,0 +1,129 @@
+:root {
+  --bg: #FAF4EF;
+  --text: #322F2F;
+  --primary: #ED6A5A;
+  --secondary: #F4A259;
+  --accent: #2A2D43;
+  --nav-bg: #2A2D43;
+  --nav-text: #F4A259;
+  --nav-hover: #ED6A5A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--nav-bg);
+  position: relative;
+  width: 100%;
+}
+
+header h1 {
+  padding: 10px;
+  color: var(--nav-text);
+}
+
+header a {
+  color: var(--nav-text);
+}
+
+header nav a {
+  padding: 20px 30px;
+  display: inline-block;
+  font-size: 1.2em;
+}
+
+header nav a:hover, #menu-btn:hover, #menu-close-btn:hover {
+  background-color: var(--nav-hover);
+  color: var(--accent);
+}
+
+#menu-btn, #menu-close-btn {
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: var(--nav-text);
+  font-size: 2em;
+  padding: 10px 20px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.invisible-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000033;
+  display: none;
+}
+
+main {
+  padding: 10px;
+  width: 80%;
+}
+
+main p {
+  padding: 10px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 200px;
+    background-color: var(--nav-bg);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    transform: translateX(300px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 99;
+  }
+  
+  main {
+    width: 100%;
+  }
+  
+  nav.active {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  
+  .invisible-bar.active {
+    display: block;
+  }
+  
+  #menu-btn, #menu-close-btn {
+    display: block;
+  }
+}
