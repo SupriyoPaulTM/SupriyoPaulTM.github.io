@@ -1,0 +1,71 @@
+:root {
+  --clr1: #7371FC;
+  --clr2: #586A6A;
+  --clr3: #9395D3;
+  --clr4: #C4D6B0;
+  --clr5: #413C58;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  height: 100vh;
+  background-color: black;
+}
+
+button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn1 {
+  border: 2px solid var(--clr1);
+  color: var(--clr1);
+  background-image: linear-gradient(to right, var(--clr1) 50%, transparent 50%);
+  background-size: 200%;
+  background-position: right;
+}
+
+.btn1:hover {
+  background-position: left;
+  color: white;
+}
+
+.btn2 {
+  background-color: var(--clr5);
+  border: 2px solid var(--clr5);
+}
+
+.btn2:hover {
+  border: 2px solid var(--clr3);
+}
+
+.btn3 {
+  border: 2px solid var(--clr2);
+  color: var(--clr2);
+}
+
+.btn3:hover {
+  background-color: var(--clr2);
+  color: white;
+  box-shadow: 0 0 25px #C4D6B099;
+}
+
+.btn4 {
+  color: white;
+  padding: 10px 20px;
+  background-color: var(--clr3);
+}
+
+.btn4:hover {
+  padding: 10px 5px 10px 35px;
+}
