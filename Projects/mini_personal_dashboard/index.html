@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>Mini Personal Dashboard</title>
+</head>
+<body onload="startClock()">
+  <header>Welcome,
+    <span>Supriyo</span>
+    <button class="material-icons">settings</button>
+  </header>
+  <section>
+    <div class="card-wraper">
+      <div class="card">
+        <i class="material-icons big">date_range</i>
+        <h3>Today's Date:</h3>
+        <p id="date-value">dd / mm / yyy</p>
+      </div>
+    </div>
+    <div class="card-wraper">
+      <div class="card">
+        <i class="material-icons big">lightbulb</i>
+        <h3>Today's Quote:</h3>
+        <p id="quote-value">A quote goes here</p>
+      </div>
+    </div>
+    <div class="card-wraper">
+      <div class="card">
+        <i class="material-icons big">schedule</i>
+        <h3>Current Time:</h3>
+        <p id="time-value">hh / mm AM</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    2025 © All Rights Researved
+  </footer>
+  <script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
