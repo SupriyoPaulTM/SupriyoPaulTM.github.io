@@ -29,11 +29,11 @@ body {
   bottom: 0;
   background-color: transparent;
   z-index: 2;
-  pointer-events: none;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: height 0.3s ease;
 }
 
 .overlay {
@@ -52,17 +52,35 @@ body {
   transition: transform 0.3s ease;
 }
 
-.overlay:hover {
+.wraper:hover .overlay {
   transform: scaleY(0);
+}
+
+.wraper:hover .overlay-text {
+  height: 100%;
 }
 
 .material-icons {
   text-align: center;
 }
 
+.material-icons.refresh {
+  font-size: 2em;
+  transition: transform 0.3s ease;
+}
+
+.wraper:hover .refresh {
+  transform: rotate(180deg);
+}
+
 .material-icons.big {
   font-size: 4em;
   color: yellow;
+  transition: transform 0.3s ease;
+}
+
+.wraper:hover .big {
+  transform: scale(1.1);
 }
 
 .label {
