@@ -1,4 +1,6 @@
 :root {
+  --bg-clr: #F9FAFB;
+  --text-clr: #0D2149;
   --accent-clr: #0D2149;
 }
 
@@ -7,10 +9,22 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+.dark-theme {
+  --bg-clr: #0E1217;
+  --text-clr: #E8ECF2;
+  --accent-clr: #3E8EED;
+}
+
+body {
+  background-color: var(--bg-clr);
+  color: var(--text-clr);
 }
 
 /* Header Section */
@@ -21,34 +35,63 @@ header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: relative;
 }
 
 header .title {
   font-size: 1.3em;
   padding: 5px 10px;
+  flex: 1;
 }
 
-nav {
+#menu {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--bg-clr);
 }
 
-nav a {
+#menu a {
   color: var(--accent-clr);
   padding: 5px;
   margin-left: 10px;
 }
 
-nav a:hover {
+#menu a:hover {
   background-color: var(--accent-clr);
   color: white;
 }
 
-header button {
+.btn {
   background-color: transparent;
   border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--text-clr);
+}
+
+#menu-btn, #close-btn {
   display: none;
+}
+
+.btn:hover {
+  background-color: var(--accent-clr);
+  color: white;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: #00000033;
+  display: none;
+}
+  
+.overlay.active {
+  display: block;
 }
 
 /* Hero Section */
@@ -120,8 +163,8 @@ section .content {
 .box {
   border: 1px solid var(--accent-clr);
   border-radius: 15px;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,6 +180,10 @@ section .content {
   color: white;
 }
 
+.contact a {
+  color: var(--accent-clr);
+}
+
 footer {
   border-top: 1px solid var(--accent-clr);
   width: 100%;
@@ -145,4 +192,42 @@ footer {
   line-height: 1.5em;
   font-size: 0.9em;
   opacity: 0.9;
+}
+
+@media only screen and (max-width: 768px) {
+  #menu-btn, #close-btn {
+    display: block;
+    cursor: pointer;
+  }
+  
+  #menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: -5px 0 15px #00000066;
+    transform: translateX(200px);
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: 2;
+  }
+  
+  #menu.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  #close-btn {
+    text-align: right;
+  }
+  
+  #menu a, #menu button {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.2em;
+  }
 }
