@@ -25,3 +25,21 @@ themeBtn.addEventListener("click", function(){
     themeBtn.innerHTML = "dark_mode";
   };
 });
+
+const observer = new IntersectionObserver(callback, {
+  threshold: 0.3
+});
+
+document.querySelectorAll("section").forEach(sec => observer.observe(sec));
+
+function callback (entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+      document.querySelectorAll("nav a").forEach(link => {
+        link.classList.remove("active");
+      });
+      const id = entry.target.id;
+      document.querySelector(`nav a[href="#${id}"]`).classList.add("active");
+    };
+  });
+};
