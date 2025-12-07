@@ -49,7 +49,7 @@ function render(q) {
       box.classList.add("list-item");
       info.textContent = (i+1) + ". " + toDoList[i];
       checkBtn.addEventListener("click", () => {
-        box.classList.add("done");
+        box.classList.toggle("done");
       });
       delBtn.addEventListener("click", () => {
         toDoList.splice(i, 1);
