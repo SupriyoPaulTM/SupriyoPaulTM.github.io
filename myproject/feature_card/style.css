@@ -1,0 +1,99 @@
+:root {
+  --clr-bg: #0D0F12;
+  --clr-box: #1A1F2B;
+  --clr-box2: #11151D;
+  --clr-accent: #4E72FF66;
+  --clr-big-text: #FFFFFF;
+  --clr-mini-text: #C0C5D0;
+  --clr-shadow: #00000033;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-mini-text);
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 30px;
+}
+
+.card {
+  background-color: var(--clr-box);
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 0 15px var(--clr-shadow);
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.card:hover {
+  background-color: var(--clr-box2);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-accent);
+  filter: blur(20px);
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.icon {
+  color: var(--clr-big-text);
+}
+
+.icon .material-icons {
+  font-size: 2em;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .material-icons {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.title {
+  font-size: 2em;
+  color: var(--clr-big-text);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .title {
+  transform: scale(1.05);
+}
+
+.info {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .info {
+  transform: translateY(10px);
+}

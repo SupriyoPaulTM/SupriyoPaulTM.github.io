@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>Smart To-Do List</title>
+</head>
+<body>
+  <header>Smart To-Do List</header>
+  <div class="search-bar">
+    <input type="text" id="text-input"/>
+  </div>
+  <div class="buttons">
+    <button id="addBtn" onclick="addToList()">
+      <i class="material-icons">add</i>
+      <span class="lable">Add to List</span>
+    </button>
+    <button id="clearBtn" onclick="clearList()">
+      <i class="material-icons">close</i>
+      <span class="lable">Clear List</span>
+    </button>
+  </div>
+  <main id="container">
+    <div class="count">Count: <span id="count"></span></div>
+    <div class="search-box"><input type="text" id="search-input"/></div>
+    <div class="tooltip">Empty</div>
+  </main>
+  <script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
