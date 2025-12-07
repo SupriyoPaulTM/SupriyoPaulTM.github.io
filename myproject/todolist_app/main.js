@@ -1,4 +1,10 @@
-let toDoList = ["Learn JavaScript", "Buy Milk", "Create Portfolio", "Make Progress Report", "Go to Marriage Function"];
+let toDoList = [];
+
+let localString = localStorage.getItem("toDoListData");
+if (localString !== null) {
+  toDoList = JSON.parse(localString);
+};
+
 const textInput = document.getElementById("text-input");
 const container = document.getElementById("container");
 const count = document.getElementById("count");
@@ -11,12 +17,14 @@ function addToList() {
   } else {
     toDoList.push(inpt);
     textInput.value = "";
+    saveToLocal();
     render(q);
   };
 };
 
 function clearList() {
   toDoList = [];
+  saveToLocal();
   render(q);
 };
 
@@ -53,6 +61,7 @@ function render(q) {
       });
       delBtn.addEventListener("click", () => {
         toDoList.splice(i, 1);
+        saveToLocal();
         render(q);
       });
       checkBtn.classList.add("material-icons");
@@ -64,6 +73,11 @@ function render(q) {
     };
   };
   count.textContent = toDoList.length;
+};
+
+function saveToLocal() {
+  let jsonData = JSON.stringify(toDoList);
+  localStorage.setItem("toDoListData", jsonData);
 };
 
 render(q);
