@@ -15,7 +15,7 @@ function addToList() {
   if (inpt == "") {
     alert("Input Field is Empty");
   } else {
-    toDoList.push({"text": inpt, "done": false});
+    toDoList.push({"text": inpt, "done": false, "priority": "low"});
     textInput.value = "";
     saveToLocal();
     render(q);
@@ -61,8 +61,18 @@ function render(q) {
       const editBox = document.createElement("div");
       const inputBox = document.createElement("input");
       const editDone = document.createElement("button");
+      const highBtn = document.createElement("button");
+      const midBtn = document.createElement("button");
+      const lowBtn = document.createElement("button");
       if (toDoList[i].done === true) {
         box.classList.add("done");
+      };
+      if (toDoList[i].priority === "high") {
+        box.classList.add("high");
+      } else if (toDoList[i].priority === "medium") {
+        box.classList.add("medium");
+      } else {
+        box.classList.add("low");
       };
       info.textContent = toDoList[i].text;
       checkBtn.addEventListener("click", () => {
@@ -71,9 +81,14 @@ function render(q) {
         render(q);
       });
       delBtn.addEventListener("click", () => {
-        toDoList.splice(i, 1);
-        saveToLocal();
-        render(q);
+        if (confirm("Are you sure?")) {
+          box.classList.add("delete");
+          setTimeout(function() {
+            toDoList.splice(i, 1);
+            saveToLocal();
+            render(q);
+          }, 600);
+        };
       });
       menuBtn.addEventListener("click", () => {
         optionBox.classList.toggle("active");
@@ -88,24 +103,40 @@ function render(q) {
         saveToLocal();
         render(q);
       });
+      highBtn.addEventListener("click", () => {
+        toDoList[i].priority = "high";
+        saveToLocal();
+        render(q);
+      });
+      midBtn.addEventListener("click", () => {
+        toDoList[i].priority = "medium";
+        saveToLocal();
+        render(q);
+      });
+      lowBtn.addEventListener("click", () => {
+        toDoList[i].priority = "low";
+        saveToLocal();
+        render(q);
+      });
       box.classList.add("list-item");
+      box.setAttribute("draggable", true);
       optionBox.classList.add("option-box");
       menuBtn.classList.add("material-icons", "menu");
       dragBtn.classList.add("material-icons");
-      checkBtn.classList.add("material-icons");
-      delBtn.classList.add("material-icons");
-      editBtn.classList.add("material-icons");
       editDone.classList.add("material-icons");
       editBox.classList.add("edit-box");
       menuBtn.textContent = "arrow_drop_down";
       dragBtn.textContent = "drag_indicator";
-      checkBtn.textContent = "done";
-      delBtn.textContent = "delete";
-      editBtn.textContent = "edit";
+      checkBtn.textContent = "Mark as done";
+      delBtn.textContent = "Delete";
+      editBtn.textContent = "Edit";
       editDone.textContent = "done";
+      highBtn.textContent = "Set As High";
+      midBtn.textContent = "Set As Medium";
+      lowBtn.textContent = "Set As Low";
       editBox.append(inputBox, editDone);
       menuBtn.append(optionBox);
-      optionBox.append(checkBtn, editBtn, delBtn)
+      optionBox.append(checkBtn, editBtn, delBtn, highBtn, midBtn, lowBtn)
       box.append(dragBtn, info, menuBtn);
       container.appendChild(box);
     };
