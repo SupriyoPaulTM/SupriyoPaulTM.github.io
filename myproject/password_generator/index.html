@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>Password Generator</title>
+</head>
+<body>
+  <h1>Password Generator</h1>
+  <div class="pass-box">
+    <input type="text" id="pass" disabled/>
+    <i class="material-icons" id="copy-btn">content_copy</i>
+  </div>
+  <label for="pass-length">Password Length:</label>
+  <select id="pass-length">
+    <option value="4">4</option>
+    <option value="8">8</option>
+    <option value="12">12</option>
+    <option value="16">16</option>
+    <option value="24">24</option>
+  </select>
+  <div class="select-box">
+    <div class="select-item">
+      <input type="checkbox" id="num" checked/>
+      <label for="num">Include numbers.</label>
+    </div>
+    <div class="select-item">
+      <input type="checkbox" id="small-letters"/>
+      <label for="small-letters">Include Small Letters.</label>
+    </div>
+    <div class="select-item">
+      <input type="checkbox" id="big-letters"/>
+      <label for="big-letters">Include Big Letters.</label>
+    </div>
+    <div class="select-item">
+      <input type="checkbox" id="symbols"/>
+      <label for="symbols">Include Symbols.</label>
+    </div>
+    <div class="select-item">
+      <input type="text" id="prefix" placeholder="Prefix"/>
+      <input type="text" id="suffix" placeholder="Suffix"/>
+    </div>
+  </div>
+  <button id="gen-btn">Generate</button>
+  <script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
