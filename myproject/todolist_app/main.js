@@ -15,7 +15,7 @@ function addToList() {
   if (inpt == "") {
     alert("Input Field is Empty");
   } else {
-    toDoList.push({"text": inpt, "done": false, "priority": "low"});
+    toDoList.push({"text": inpt, "done": false, "priority": 0});
     textInput.value = "";
     saveToLocal();
     render(q);
@@ -48,8 +48,17 @@ function render(q) {
     });
   };
   
-  for (let i = 0; i < toDoList.length; i++) {
-    if (toDoList[i].text.toLowerCase().includes(q) || q=="") {
+  let displayList = toDoList.slice();
+  if (sortOrder === "highToLow") {
+    displayList.sort(function(a,b){return(b.priority-a.priority)});
+  } else if (sortOrder === "lowToHigh") {
+    displayList.sort(function(a,b){return(a.priority-b.priority)});
+  };
+  
+  
+  for (let i = 0; i < displayList.length; i++) {
+    const originalIndex = toDoList.indexOf(displayList[i]);
+    if (displayList[i].text.toLowerCase().includes(q) || q=="") {
       const box = document.createElement("div");
       const info = document.createElement("div");
       const menuBtn = document.createElement("button");
@@ -64,19 +73,19 @@ function render(q) {
       const highBtn = document.createElement("button");
       const midBtn = document.createElement("button");
       const lowBtn = document.createElement("button");
-      if (toDoList[i].done === true) {
+      if (displayList[i].done === true) {
         box.classList.add("done");
       };
-      if (toDoList[i].priority === "high") {
+      if (displayList[i].priority === 2) {
         box.classList.add("high");
-      } else if (toDoList[i].priority === "medium") {
+      } else if (displayList[i].priority === 1) {
         box.classList.add("medium");
       } else {
         box.classList.add("low");
       };
-      info.textContent = toDoList[i].text;
+      info.textContent = displayList[i].text;
       checkBtn.addEventListener("click", () => {
-        toDoList[i].done = !toDoList[i].done;
+        toDoList[originalIndex].done = !toDoList[originalIndex].done;
         saveToLocal();
         render(q);
       });
@@ -84,7 +93,7 @@ function render(q) {
         if (confirm("Are you sure?")) {
           box.classList.add("delete");
           setTimeout(function() {
-            toDoList.splice(i, 1);
+            toDoList.splice(originalIndex, 1);
             saveToLocal();
             render(q);
           }, 600);
@@ -96,25 +105,25 @@ function render(q) {
       editBtn.addEventListener("click", () => {
         info.replaceWith(editBox);
         menuBtn.style.display = "none";
-        inputBox.value = toDoList[i].text;
+        inputBox.value = toDoList[originalIndex].text;
       });
       editDone.addEventListener("click", () => {
-        toDoList[i].text = inputBox.value;
+        toDoList[originalIndex].text = inputBox.value;
         saveToLocal();
         render(q);
       });
       highBtn.addEventListener("click", () => {
-        toDoList[i].priority = "high";
+        toDoList[originalIndex].priority = 2;
         saveToLocal();
         render(q);
       });
       midBtn.addEventListener("click", () => {
-        toDoList[i].priority = "medium";
+        toDoList[originalIndex].priority = 1;
         saveToLocal();
         render(q);
       });
       lowBtn.addEventListener("click", () => {
-        toDoList[i].priority = "low";
+        toDoList[originalIndex].priority = 0;
         saveToLocal();
         render(q);
       });
@@ -141,12 +150,32 @@ function render(q) {
       container.appendChild(box);
     };
   };
-  count.textContent = toDoList.length;
+  count.textContent = displayList.length;
 };
 
 function saveToLocal() {
   let jsonData = JSON.stringify(toDoList);
   localStorage.setItem("toDoListData", jsonData);
 };
+
+const sortBtn = document.getElementById("sortBtn");
+let sortOrder = "default";
+sortBtn.onclick = function () {
+  if (sortOrder === "default") {
+    sortOrder = "highToLow";
+    sortBtn.textContent = "High to Low";
+    render(q);
+  } else if (sortOrder === "highToLow") {
+    sortOrder = "lowToHigh";
+    sortBtn.textContent = "Low to High";
+    render(q);
+  } else {
+    sortOrder = "default";
+    sortBtn.textContent = "Default";
+    render(q);
+  };
+};
+
+
 
 render(q);

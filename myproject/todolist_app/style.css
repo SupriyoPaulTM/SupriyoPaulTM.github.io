@@ -196,3 +196,22 @@ main {
     opacity: 0;
   }
 }
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: gray;
+}
+
+.line button {
+  float: right;
+  transform: translateX(-10px) translateY(-50%);
+  background-color: var(--bg);
+  border: none;
+  color: gray;
+}
+
+.line i {
+  font-size: 0.9em;
+  color: gray;
+}
