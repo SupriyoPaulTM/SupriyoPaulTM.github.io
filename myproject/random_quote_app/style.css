@@ -1,0 +1,52 @@
+h1 {
+  text-align: center;
+}
+
+#text-box {
+  border: 1px solid #3e3e3e;
+  width: 80%;
+  height: 200px;
+  margin: auto;
+  padding: 20px;
+  line-height: 30px;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+}
+
+.button-container {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 10px 20px;
+}
+
+#history {
+  padding: 20px;
+}
+
+.title {
+  
+}
+
+.boxItem {
+  margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.boxItem::before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 0;
+  transform: translateX(-10px) translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: black;
+}
