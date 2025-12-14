@@ -1,11 +1,11 @@
 :root {
-  --bg: #F6F7F9;
+  --bg: #F7F5F2;
   --surface: #FFFFFF;
-  --text: #1A1A1A;
-  --text-muted: #555555;
-  --accent: #3B82F6;
-  --border: #E2E8F0;
-  --shadow: #00000033;
+  --border: #E2E0DC;
+  --text: #2B2B2B;
+  --text-muted: #6B6B6B;
+  --accent: #2563EB;
+  --shadow: rgba(0, 0, 0, 0.1);
   --num-font: "Roboto Mono", monospace;
   --ltr-font: "Inter", sans-serif;
 }
@@ -17,6 +17,7 @@
   --text-muted: #94A3B8;
   --accent: #60A5FA;
   --border: #334155;
+  --shadow: #00000033;
 }
 
 body {
@@ -47,11 +48,13 @@ body {
   font-size: 1em;
   transform: translateX(0);
   transition: transform 0.3s ease;
+  color: var(--text-muted);
 }
 
 #theme-bulet.active {
   transform: translateX(100%);
 }
+
 
 .outer-frame {
   background-color: var(--surface);
@@ -59,6 +62,21 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 15px var(--shadow);
   z-index: 0;
+  transform: translateY(-1000px);
+  animation: drop 2s 1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes drop {
+  50% {
+    transform: translateY(-50px) rotate(-45deg);
+  }
+  60% {
+    transform: translateY(-100px) rotate(-45deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
 }
 
 .glowing-frame {

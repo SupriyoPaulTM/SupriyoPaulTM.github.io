@@ -63,8 +63,8 @@ function saveToLocal() {
 setInterval(function() {
   let timeNdate = new Date();
   let h = timeNdate.getHours();
-  let m = timeNdate.getMinutes();
-  let s = timeNdate.getSeconds();
+  let m = deco(timeNdate.getMinutes());
+  let s = deco(timeNdate.getSeconds());
   let d = timeNdate.getDate();
   let w = weekName[timeNdate.getDay()];
   let mn = monthName[timeNdate.getMonth()];
