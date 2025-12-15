@@ -40,6 +40,17 @@ body {
   width: 250px;
   height: 250px;
   border-radius: 50%;
+  transform: scale(0.9);
+  opacity: 0.75;
+  animation: grow 1.5s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes grow {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .outer-ring::after {
@@ -182,7 +193,7 @@ body {
 #lap-btn, #reset-btn {
   font-size: 1.8em;
   background-color: var(--bg2);
-  color: var(--text-muted);
+  color: var(--text);
   transition: transform 0.3s ease;
 }
 
@@ -200,4 +211,10 @@ body {
 
 #reset-btn.active{
   transform: translateX(150%) translateY(-50%);
+}
+
+#lap-btn.disabled, #reset-btn.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  color: var(--text-muted);
 }
