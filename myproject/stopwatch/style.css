@@ -190,7 +190,7 @@ body {
   z-index: 8;
 }
 
-.buttons-container:hover #lap-btn{
+#lap-btn.active{
   transform: translateX(-250%) translateY(-50%);
 }
 
@@ -198,6 +198,6 @@ body {
   z-index: 7;
 }
 
-.buttons-container:hover #reset-btn{
+#reset-btn.active{
   transform: translateX(150%) translateY(-50%);
 }

@@ -12,21 +12,19 @@ const playBtn = document.getElementById("play-btn");
 const lapBtn = document.getElementById("lap-btn");
 const resetBtn = document.getElementById("reset-btn");
 
+playBtn.onclick = timer;
+
 let count = 0;
-let n = 0;
-playBtn.onclick = function() {
-  if (n === 0) {
-    playBtn.textContent = "pause";
-    const timer = setInterval(function() {
-      
-      count++;
-    }, 10);
-    n=1;
-  } else {
-    playBtn.textContent = "play_arrow";
-    clearInterval(timer);
-    n=0;
-  };
+function timer() {
+  setInterval(() => {
+    let ms = count%100;
+    let s = (Math.floor(count/100))%60;
+    let m = (Math.floor(count/6000))%60;
+    let time = deco(m) + ":" + deco(s) + ":" + deco(ms);
+    timeBar.textContent = time;
+    stick.style.transform = "translateX(-50%) translateY(-80%) rotate(" + (s*6) + "deg)";
+    count++;
+  }, 10);
 };
 
 function deco(n) {
