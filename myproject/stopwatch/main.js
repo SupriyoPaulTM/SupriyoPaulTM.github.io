@@ -38,18 +38,52 @@ function start() {
     return;
   };
   timer = setInterval(() => {
-    let ms = count%100;
-    let s = (Math.floor(count/100))%60;
-    let m = (Math.floor(count/6000))%60;
-    let time = deco(m) + ":" + deco(s) + ":" + deco(ms);
-    timeBar.textContent = time;
+    timeBar.textContent = formating(count);
     stick.style.transform = "translateX(-50%) translateY(-80%) rotate(" + (count*0.06) + "deg)";
     count++;
   }, 10);
 };
+
 function pause() {
   clearInterval(timer);
   timer = null;
+};
+
+let laps =[];
+lapBtn.onclick = function () {
+  laps.push(count);
+  document.getElementById("info-title").style.display = "flex";
+  renderLap();
+};
+
+function renderLap() {
+  infoTable.querySelectorAll(".lap-info").forEach((e) => {
+    e.remove();
+  });
+  for (let i = 0; i < laps.length; i++) {
+    const item = document.createElement("div");
+    const lapCount = document.createElement("span");
+    const lapTime = document.createElement("span");
+    const lapTotal = document.createElement("span");
+    item.classList.add("lap-info");
+    lapCount.textContent = deco(i+1);
+    if (i===0) {
+      lapTime.textContent = formating(laps[i]);
+    } else {
+      lapTime.textContent = formating(laps[i]-laps[i-1]);
+    };
+    lapTotal.textContent = formating(laps[i]);
+    item.append(lapCount, lapTime, lapTotal);
+    infoTable.prepend(item);
+  };
+};
+
+function formating(n) {
+  let ms = n%100;
+  let s = (Math.floor(n/100))%60;
+  let m = (Math.floor(n/6000))%60;
+  let time = deco(m) + ":" + deco(s) + ":" + deco(ms);
+  return time;
 };
 
 function deco(n) {
@@ -62,6 +96,11 @@ function deco(n) {
 
 resetBtn.onclick = function() {
   count = 0;
+  clearInterval(timer);
+  timer = null;
+  laps =[];
+  document.getElementById("info-title").style.display = "none";
+  renderLap();
   lapBtn.classList.remove("active", "disabled");
   resetBtn.classList.remove("active", "disabled");
   timeBar.textContent = "00:00:00";
