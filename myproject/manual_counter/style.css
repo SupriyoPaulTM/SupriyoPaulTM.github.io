@@ -1,0 +1,78 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.counter {
+  padding: 20px 40px;
+  position: relative;
+}
+
+#count {
+  font-size: 2em;
+  display: block;
+}
+
+.one {
+  position: absolute;
+  top: 0;
+}
+
+.plus {
+  right: -10px;
+  color: green;
+  display: none;
+}
+
+.minus {
+  left: -10px;
+  color: red;
+  display: none;
+}
+
+.tutorial {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 2em;
+  color: #5e5e5e;
+}
+
+.one.active {
+  display: block;
+  animation: fadeup 0.5s;
+}
+
+@keyframes fadeup {
+  to {
+    transform: translateY(-20px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.vibrate {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translateX(-1px);
+  }
+  
+  20%, 80% {
+    transform: translateX(2px);
+  }
+  
+  30%, 70%, 50% {
+    transform: translateX(-4px);
+  }
+  
+  40%, 60% {
+    transform: translateX(4px);
+  }
+}
