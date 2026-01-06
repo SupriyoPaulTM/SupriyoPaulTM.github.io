@@ -20,3 +20,27 @@ button {
   top: 0;
   display: none;
 }
+
+.popup-menu {
+  background-color: white;
+  border: 1px solid red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.title {
+  background-color: burlywood;
+  padding: 20px;
+  font-size: large;
+}
+
+.content {
+  padding: 20px 50px;
+}
+
+.btns {
+  float: right;
+  padding: 10px;
+}
