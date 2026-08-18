@@ -1,0 +1,16 @@
+{
+  "taphost": true,
+  "version": 1,
+  "name": "SupriyoPaulTM.github.io",
+  "environment": "STATIC",
+  "templateName": "GIT_CLONE",
+  "port": 8080,
+  "dbEnabled": false,
+  "dbType": "SQLITE",
+  "dbName": "supriyopaultm_github_io_db",
+  "dbUser": "root",
+  "dbPass": "",
+  "ftpEnabled": false,
+  "ftpUser": "supriyopaultm_github_io_ftp",
+  "ftpPass": "123456"
+}
