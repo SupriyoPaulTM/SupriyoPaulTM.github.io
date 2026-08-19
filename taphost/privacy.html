@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - TapHost</title>
+    <style>
+        :root {
+            --bg-color: #0b111e;
+            --card-bg: #131c2e;
+            --accent-cyan: #00e5ff;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --border-color: #1e293b;
+            --badge-bg: rgba(0, 229, 255, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.65;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 820px;
+            width: 100%;
+        }
+
+        header {
+            margin-bottom: 36px;
+            text-align: center;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--badge-bg);
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .effective-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background: var(--accent-cyan);
+            border-radius: 2px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 14px;
+        }
+
+        li {
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+            position: absolute;
+            left: 4px;
+            top: -2px;
+        }
+
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-box {
+            background: rgba(0, 229, 255, 0.05);
+            border: 1px dashed var(--accent-cyan);
+            padding: 16px;
+            border-radius: 10px;
+            margin-top: 14px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="badge">LEGAL & PRIVACY</div>
+        <h1>Privacy Policy</h1>
+        <p class="effective-date">Effective Date: August 19, 2026 • Application: <strong>TapHost</strong></p>
+    </header>
+
+    <div class="card">
+        <h2>1. Overview</h2>
+        <p>
+            Welcome to <strong>TapHost</strong>, developed by <strong>Suprio Paul</strong>. 
+            TapHost is a local web development environment for Android that provides local web hosting (HTTP/PHP), database management (SQLite), FTP server capabilities, and Git version control.
+        </p>
+        <p>
+            Your privacy is our priority. TapHost is engineered as an <strong>offline-first, client-side application</strong>. We do not operate secondary servers to collect, harvest, or sell your source code, projects, databases, or personal files.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>2. Data Collection and Usage</h2>
+        <p>TapHost operates primarily locally on your device:</p>
+        <ul>
+            <li><strong>Project Files & Databases:</strong> All HTML, CSS, JavaScript, PHP files, SQLite databases, and server configurations remain exclusively stored on your local device storage.</li>
+            <li><strong>Network & Web Server:</strong> The local web server and FTP server run on local loopback and local area network interfaces. No project traffic passes through external servers unless you voluntarily activate an optional public tunnel.</li>
+            <li><strong>GitHub Authentication:</strong> When you connect your GitHub account via OAuth or Personal Access Tokens, tokens are stored encrypted in private on-device SharedPreferences. They are used strictly to communicate directly with official GitHub APIs (e.g., cloning, pulling, and pushing repositories) on your behalf.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>3. Third-Party Services and Advertisements</h2>
+        <p>
+            The free version of TapHost utilizes third-party SDKs to display advertisements and support app development:
+        </p>
+        <ul>
+            <li>
+                <strong>Google AdMob:</strong> We use Google AdMob to serve banner and interstitial ads. Google AdMob may collect and process device identifiers (such as Advertising ID), IP addresses, and diagnostic crash data in accordance with 
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
+            </li>
+            <li>
+                <strong>Google Play In-App Billing:</strong> If you support TapHost via the Supporter Wall / In-App Purchase, the transaction is processed securely through Google Play Billing. We never receive or store your credit card or financial details.
+            </li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>4. Device Permissions</h2>
+        <p>TapHost requests only the permissions necessary to function as a developer tool:</p>
+        <ul>
+            <li><strong>INTERNET & ACCESS_NETWORK_STATE:</strong> Required to host the local web server on your local Wi-Fi/LAN, clone Git repositories, and load AdMob ads.</li>
+            <li><strong>FOREGROUND_SERVICE:</strong> Required to keep the background server process alive and stable while you test web pages in external browsers.</li>
+            <li><strong>POST_NOTIFICATIONS:</strong> Used to display an active server status notification with quick stop/start controls.</li>
+            <li><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS:</strong> Optional user-granted setting to prevent the Android OS from prematurely terminating the server process during background hosting.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>5. Children's Privacy</h2>
+        <p>
+            TapHost is intended for general audiences, developers, and students. We do not knowingly collect personal identifiable information from children under the age of 13.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>6. Changes to This Privacy Policy</h2>
+        <p>
+            We may update our Privacy Policy from time to time to reflect app updates or regulatory requirements. Any updates will be posted on this page with a revised effective date.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>7. Contact Us</h2>
+        <p>
+            If you have any questions, feedback, or concerns regarding this Privacy Policy or TapHost, feel free to contact us:
+        </p>
+        <div class="contact-box">
+            <p><strong>Developer:</strong> Suprio Paul</p>
+            <p><strong>Email:</strong> <a href="mailto:supriopaul.all@gmail.com">supriopaul911@gmail.com</a></p>
+            <p><strong>Website:</strong> <a href="https://supriyopaultm.github.io" target="_blank" rel="noopener noreferrer">supriyopaultm.github.io</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TapHost • Developed by Suprio Paul. All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
