@@ -3,199 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EchoCircles — Dynamic Circles, Real-Time Community & Discussions</title>
-  <meta name="description" content="EchoCircles is a modern mobile platform for real-time discussions, dynamic community circles, interactive polls, trivia quizzes, and community knowledge sharing.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2235%22 fill=%22%232563eb%22/></svg>">
+  <title>EchoCircles — Legal & Privacy Hub</title>
+  <style>
+    :root {
+      --bg: #0B0F19;
+      --card-bg: #111827;
+      --text: #F1F5F9;
+      --text-muted: #94A3B8;
+      --primary: #00F2FE;
+      --primary-dark: #00B294;
+      --border: #1E293B;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 16px;
+    }
+    .container {
+      max-width: 680px;
+      margin: 40px auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    .logo-badge {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 28px;
+      color: #070B14;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    p { color: var(--text-muted); font-size: 15px; margin-bottom: 28px; }
+    .links-grid {
+      display: grid;
+      gap: 16px;
+      text-align: left;
+    }
+    .card-link {
+      display: block;
+      background: #0D1322;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .card-link:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 242, 254, 0.12);
+    }
+    .card-link h3 { color: var(--primary); font-size: 17px; margin-bottom: 6px; }
+    .card-link p { color: #94A3B8; font-size: 14px; margin-bottom: 0; }
+    .footer {
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <div class="logo-badge">EC</div>
+    <h1>EchoCircles Legal & Transparency Hub</h1>
+    <p>Official privacy policies, terms, and data governance resources for EchoCircles.</p>
 
-  <!-- Site Header -->
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand">
-        <div class="echo-logo" aria-hidden="true">
-          <div class="echo-wave"></div>
-          <div class="echo-wave"></div>
-          <div class="echo-wave"></div>
-          <div class="echo-core"></div>
-        </div>
-        <div>
-          <span class="brand-name">EchoCircles <span class="brand-badge">v0.1</span></span>
-          <span class="brand-sub">by MobileStudio</span>
-        </div>
+    <div class="links-grid">
+      <a href="privacy-policy.html" class="card-link">
+        <h3>📄 Privacy Policy</h3>
+        <p>Learn how EchoCircles collects, safeguards, and respects your personal data.</p>
       </a>
 
-      <button class="menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+      <a href="delete-account.html" class="card-link">
+        <h3>🗑️ Account & Data Deletion</h3>
+        <p>Step-by-step instructions for permanently purging your account and profile data.</p>
+      </a>
 
-      <nav class="main-nav">
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms</a>
-        <a href="mailto:supriopaul.all@gmail.com" class="btn btn-secondary">Support</a>
-        <a href="https://play.google.com/store/apps/details?id=com.mobilestudio.echocircles" class="btn btn-primary" target="_blank" rel="noopener">Get the App</a>
-      </nav>
+      <a href="delete-content.html" class="card-link">
+        <h3>📝 Content Deletion</h3>
+        <p>How to delete individual posts, replies, and comments without closing your account.</p>
+      </a>
     </div>
-  </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-pill">
-          <span class="dot"></span> Official EchoCircles Release v0.1
-        </div>
-        
-        <div style="display: flex; justify-content: center; margin-bottom: 24px;">
-          <div class="echo-logo large" aria-hidden="true">
-            <div class="echo-wave"></div>
-            <div class="echo-wave"></div>
-            <div class="echo-wave"></div>
-            <div class="echo-core"></div>
-          </div>
-        </div>
-
-        <h1>
-          Where Ideas Echo.<br>
-          <span class="gradient-text">Communities Connect.</span>
-        </h1>
-
-        <p class="hero-desc">
-          Real-time discussions, dynamic circles, interactive polls, quizzes, and community knowledge sharing — all unified in one modern Android experience.
-        </p>
-
-        <div class="hero-cta">
-          <a href="https://play.google.com/store/apps/details?id=com.mobilestudio.echocircles" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-.955V2.77c.143-.376.357-.707.61-.956zm11.24 11.24l2.49 2.49-11.455 6.613 8.965-9.103zm0-2.108L5.884 1.843l11.455 6.613-2.49 2.49zm1.484 1.054l3.87 2.235c.797.46.797 1.209 0 1.669l-3.87 2.235-2.222-2.222 2.222-2.222z"/>
-            </svg>
-            Download on Google Play
-          </a>
-          <a href="#features" class="btn btn-secondary btn-lg">Explore Features</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section" id="features">
-      <div class="container">
-        <div class="section-head">
-          <h2>Engineered for Engaging Communities</h2>
-          <p>Every feature in EchoCircles is crafted to spark meaningful conversations and keep your circles lively.</p>
-        </div>
-
-        <div class="grid-3">
-          <!-- Card 1 -->
-          <div class="card">
-            <div class="card-icon">⭕</div>
-            <h3>Dynamic Circles</h3>
-            <p>Join or create custom topic circles with flexible privacy settings, customized headings, banners, and tailored posting permissions.</p>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="card">
-            <div class="card-icon">📊</div>
-            <h3>Interactive Polls & Quizzes</h3>
-            <p>Engage your audience with multiple-choice live polls, timed trivia quizzes, and real-time community vote percentages.</p>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="card">
-            <div class="card-icon">⚡</div>
-            <h3>Real-Time Feed & Chat</h3>
-            <p>Stay updated with instant post streams, nested discussion replies, circle group chats, and one-on-one direct messaging.</p>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="card">
-            <div class="card-icon">🏆</div>
-            <h3>EP & Community Leaderboard</h3>
-            <p>Earn Experience Points (EP) by creating insightful content and participating in discussions to climb circle leaderboards.</p>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="card">
-            <div class="card-icon">🎨</div>
-            <h3>Material 3 Theming</h3>
-            <p>Enjoy a sleek, high-contrast dark mode and clean light theme powered by dynamic Jetpack Compose UI components.</p>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="card">
-            <div class="card-icon">🛡️</div>
-            <h3>Safety & Moderation</h3>
-            <p>Empower moderators with content approvals, member restriction tiers, report systems, and strict community standards.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="highlights-section" id="about">
-      <div class="container">
-        <div class="banner-box">
-          <h2>Built with Passion by MobileStudio</h2>
-          <p>EchoCircles is designed to bring people together around shared interests without algorithms getting in the way of genuine human discussion.</p>
-          <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-            <a href="mailto:supriopaul.all@gmail.com" class="btn btn-secondary">Get Support</a>
-            <a href="privacy.html" class="btn btn-secondary">Privacy Policy</a>
-            <a href="terms.html" class="btn btn-secondary">Terms of Service</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand">
-            <div class="echo-logo" aria-hidden="true">
-              <div class="echo-wave"></div>
-              <div class="echo-wave"></div>
-              <div class="echo-core"></div>
-            </div>
-            <div>
-              <span class="brand-name">EchoCircles</span>
-              <span class="brand-sub">by MobileStudio</span>
-            </div>
-          </div>
-          <p>Real-time discussions, dynamic circles, and community knowledge sharing platform.</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="https://play.google.com/store/apps/details?id=com.mobilestudio.echocircles" target="_blank" rel="noopener">Google Play Store</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Legal & Contact</h4>
-          <ul>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="mailto:supriopaul.all@gmail.com">supriopaul.all@gmail.com</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>
-          Developed with ❤️ by <a href="https://supriyopaultm.github.io" target="_blank" rel="noopener">SupriyoPaulTM</a> • A MobileStudio Production
-        </div>
-        <div>
-          © <span id="current-year">2026</span> EchoCircles. All rights reserved.
-        </div>
-      </div>
+    <div class="footer">
+      <p>&copy; 2026 EchoCircles • <a href="https://github.com/SupriyoPaulTM/EchoCircles-Mobile" target="_blank" style="color: var(--primary); text-decoration: none;">GitHub Repository</a></p>
     </div>
-  </footer>
-
-  <script src="app.js"></script>
+  </div>
 </body>
 </html>
